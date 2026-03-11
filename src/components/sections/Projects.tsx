@@ -183,7 +183,7 @@ function BrowserMockup({
         </div>
 
         {/* Ekran ichidagi gradient va skeleton UI */}
-        <div className="relative overflow-hidden" style={{ height: large ? 196 : 142, background: gradient }}>
+        <div className="relative overflow-hidden" style={{ height: large ? 170 : 120, background: gradient }}>
           <div className="p-[14px_16px] flex flex-col gap-[7px]">
             <div className="flex gap-2">
               {[72, 48, 60].map((w, i) => (
@@ -358,7 +358,7 @@ function ProjectCard({
         "dark:bg-gradient-to-br dark:from-[#111111] dark:to-[#1A1A1A]",
       ].join(" ")}
       style={{
-        padding: "clamp(1.5rem, 3vw, 2.5rem)",
+        padding: "clamp(1.2rem, 2.5vw, 2rem)",
         border: isDark ? `4px solid ${borderColor}` : `2px solid ${borderColor}`,
         willChange: "transform",
         transform: visible ? tiltTransform : "translateY(40px) scale(0.96)",
@@ -554,16 +554,7 @@ export default function SelectedProjects() {
   // Mount bo'lmasa isDark = false (server render bilan mos)
   const isDark = mounted ? resolvedTheme === "dark" : false;
 
-  // Font injection (bir marta)
-  useEffect(() => {
-    if (document.getElementById("sp-fonts")) return;
-    const l = document.createElement("link");
-    l.id = "sp-fonts";
-    l.rel = "stylesheet";
-    l.href =
-      "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&family=Instrument+Sans:wght@400;500;600&display=swap";
-    document.head.appendChild(l);
-  }, []);
+  // Font injection moved to layout.tsx
 
   return (
     // ✅ Tailwind dark: klass — bg o'zgaradi

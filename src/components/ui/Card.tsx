@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "next-themes";
 
 interface CardProps {
   children: React.ReactNode;
@@ -15,12 +15,13 @@ export default function Card({
   className = "",
   hover = true,
 }: CardProps) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   return (
     <motion.div
       className={`rounded-2xl p-6 transition-all duration-300 ${
-        theme === "dark"
+        isDark
           ? "bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.07]"
           : "bg-white border border-slate-200 shadow-sm hover:shadow-md"
       } ${className}`}

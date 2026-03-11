@@ -1,36 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-// ─── Types ────────────────────────────────────────────────────────────────────
-type Theme = "dark" | "light";
-
-// ─── Theme System ─────────────────────────────────────────────────────────────
-function useTheme() {
-  const [theme, setTheme] = useState<Theme>("dark");
-
-  useEffect(() => {
-    const stored = localStorage.getItem("portfolio-theme") as Theme | null;
-    const preferred: Theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    const initial = stored ?? preferred;
-    setTheme(initial);
-    applyTheme(initial);
-  }, []);
-
-  function applyTheme(t: Theme) {
-    document.documentElement.setAttribute("data-theme", t);
-  }
-
-  const toggle = () => {
-    const next: Theme = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    applyTheme(next);
-    localStorage.setItem("portfolio-theme", next);
-  };
-
-  return { theme, toggle };
-}
+import { AnimatePresence, motion } from "framer-motion"
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
 // ─── Nav Links ────────────────────────────────────────────────────────────────
 const NAV = [
@@ -109,9 +81,17 @@ function NavLink({ label, href, active, onClick }: { label: string; href: string
   );
 }
 
-// ─── ThemeToggle ──────────────────────────────────────────────────────────────
-function ThemeToggle({ theme, toggle }: { theme: Theme; toggle: () => void }) {
-  const dark = theme === "dark";
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
+  const isDark = theme === "dark";
+  const toggle = () => setTheme(isDark ? "light" : "dark");
+
   return (
     <motion.button
       onClick={toggle}
@@ -122,7 +102,7 @@ function ThemeToggle({ theme, toggle }: { theme: Theme; toggle: () => void }) {
       <span className="toggle-track">
         <motion.span
           className="toggle-thumb"
-          animate={{ x: dark ? 2 : 22 }}
+          animate={{ x: isDark ? 2 : 22 }}
           transition={{ type: "spring", stiffness: 500, damping: 36 }}
         />
         <span className="t-icon t-icon-l"><MoonIcon /></span>
@@ -145,7 +125,6 @@ function Hamburger({ open, onClick }: { open: boolean; onClick: () => void }) {
 
 // ─── Main Navbar ──────────────────────────────────────────────────────────────
 export default function Navbar() {
-  const { theme, toggle } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive]     = useState("");
   const [open, setOpen]         = useState(false);
@@ -174,37 +153,11 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Google Fonts */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+      {/* Google Fonts consolidated in layout.tsx */}
 
       <style>{`
         /* ── CSS Tokens ── */
-        :root[data-theme="dark"] {
-          --bg:            #07070f;
-          --glass:         rgba(11,11,22,0.72);
-          --glass-border:  rgba(255,255,255,0.065);
-          --glass-shadow:  0 8px 60px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.04);
-          --text:          #eaeaf5;
-          --text-dim:      rgba(190,190,225,0.45);
-          --text-nav:      rgba(195,195,228,0.68);
-          --accent:        #6e84fe;
-          --accent2:       #a78bfa;
-          --glow:          rgba(110,132,254,0.22);
-          --glow2:         rgba(110,132,254,0.10);
-          --pill-bg:       rgba(255,255,255,0.052);
-          --pill-border:   rgba(255,255,255,0.085);
-          --pill-hover:    rgba(255,255,255,0.095);
-          --resume-bg:     linear-gradient(135deg,#6e84fe 0%,#a78bfa 100%);
-          --resume-shadow: 0 4px 22px rgba(110,132,254,0.38);
-          --tog-track:     rgba(255,255,255,0.07);
-          --tog-border:    rgba(255,255,255,0.10);
-          --tog-thumb:     #6e84fe;
-          --divider:       rgba(255,255,255,0.07);
-          --mob-bg:        rgba(7,7,15,0.97);
-          --mob-hover:     rgba(110,132,254,0.07);
-        }
-        :root[data-theme="light"] {
+        :root {
           --bg:            #f2f2f8;
           --glass:         rgba(255,255,255,0.82);
           --glass-border:  rgba(0,0,0,0.065);
@@ -227,6 +180,31 @@ export default function Navbar() {
           --divider:       rgba(0,0,0,0.068);
           --mob-bg:        rgba(245,245,252,0.98);
           --mob-hover:     rgba(78,107,245,0.07);
+        }
+
+        .dark {
+          --bg:            #07070f;
+          --glass:         rgba(11,11,22,0.72);
+          --glass-border:  rgba(255,255,255,0.065);
+          --glass-shadow:  0 8px 60px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.04);
+          --text:          #eaeaf5;
+          --text-dim:      rgba(190,190,225,0.45);
+          --text-nav:      rgba(195,195,228,0.68);
+          --accent:        #6e84fe;
+          --accent2:       #a78bfa;
+          --glow:          rgba(110,132,254,0.22);
+          --glow2:         rgba(110,132,254,0.10);
+          --pill-bg:       rgba(255,255,255,0.052);
+          --pill-border:   rgba(255,255,255,0.085);
+          --pill-hover:    rgba(255,255,255,0.095);
+          --resume-bg:     linear-gradient(135deg,#6e84fe 0%,#a78bfa 100%);
+          --resume-shadow: 0 4px 22px rgba(110,132,254,0.38);
+          --tog-track:     rgba(255,255,255,0.07);
+          --tog-border:    rgba(255,255,255,0.10);
+          --tog-thumb:     #6e84fe;
+          --divider:       rgba(255,255,255,0.07);
+          --mob-bg:        rgba(7,7,15,0.97);
+          --mob-hover:     rgba(110,132,254,0.07);
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -564,10 +542,10 @@ export default function Navbar() {
           <div className="nb-right">
             <span className="nb-divider" />
 
-            <ThemeToggle theme={theme} toggle={toggle} />
+            <ThemeToggle />
 
             <motion.a
-              href="https://github.com"
+              href="https://github.com/alibek-developer"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"

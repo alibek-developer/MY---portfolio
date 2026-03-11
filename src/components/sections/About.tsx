@@ -1,5 +1,8 @@
+"use client";
+
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
 
 // ─── SPRING / VARIANTS ────────────────────────────────────────
 const spring = { type: 'spring', stiffness: 52, damping: 15 }
@@ -59,43 +62,33 @@ const LIGHT = {
 	blob2: '#DDD6FE',
 }
 
-// ─── BLOBS ────────────────────────────────────────────────────
 type ThemeColors = typeof DARK;
 
-function Blobs({ c, dark }: { c: ThemeColors; dark: boolean }) {	
+// ─── BLOBS ────────────────────────────────────────────────────
+function Blobs({ c, isDark }: { c: ThemeColors; isDark: boolean }) {	
 	return (
-		<div
-			style={{
-				position: 'fixed',
-				inset: 0,
-				overflow: 'hidden',
-				pointerEvents: 'none',
-				zIndex: 0,
-			}}
-		>
+		<div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
 			<div
+				className="absolute rounded-full"
 				style={{
-					position: 'absolute',
 					width: 900,
 					height: 900,
-					borderRadius: '50%',
 					background: c.blob1,
 					filter: 'blur(170px)',
-					opacity: dark ? 0.55 : 0.55,
+					opacity: 0.55,
 					top: '-30%',
 					left: '-20%',
 					animation: 'b1 24s ease-in-out infinite',
 				}}
 			/>
 			<div
+				className="absolute rounded-full"
 				style={{
-					position: 'absolute',
 					width: 700,
 					height: 700,
-					borderRadius: '50%',
 					background: c.blob2,
 					filter: 'blur(140px)',
-					opacity: dark ? 0.4 : 0.45,
+					opacity: isDark ? 0.4 : 0.45,
 					bottom: '-20%',
 					right: '-15%',
 					animation: 'b2 30s ease-in-out infinite',
@@ -104,45 +97,8 @@ function Blobs({ c, dark }: { c: ThemeColors; dark: boolean }) {
 			<style>{`
         @keyframes b1{0%,100%{transform:translate(0,0)}50%{transform:translate(55px,45px)}}
         @keyframes b2{0%,100%{transform:translate(0,0)}50%{transform:translate(-45px,-38px)}}
-        *{box-sizing:border-box;margin:0;padding:0}
       `}</style>
 		</div>
-	)
-}
-
-// ─── TOGGLE ───────────────────────────────────────────────────
-function Toggle({ dark, c, onToggle }: { dark: boolean; c: ThemeColors; onToggle: () => void }) {
-	return (
-		<motion.button
-			onClick={onToggle}
-			whileHover={{ scale: 1.04 }}
-			whileTap={{ scale: 0.96 }}
-			style={{
-				position: 'fixed',
-				top: 24,
-				right: 24,
-				zIndex: 300,
-				background: dark ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.85)',
-				backdropFilter: 'blur(20px)',
-				border: `1px solid ${dark ? 'rgba(255,255,255,0.09)' : 'rgba(0,0,0,0.08)'}`,
-				borderRadius: 50,
-				padding: '9px 20px',
-				cursor: 'pointer',
-				display: 'flex',
-				alignItems: 'center',
-				gap: 8,
-				color: c.text,
-				fontSize: 12,
-				fontWeight: 700,
-				letterSpacing: '0.05em',
-				boxShadow: dark
-					? '0 4px 24px rgba(0,0,0,0.5)'
-					: '0 4px 20px rgba(0,0,0,0.08)',
-			}}
-		>
-			<span style={{ fontSize: 15 }}>{dark ? '🌙' : '☀️'}</span>
-			{dark ? 'Dark' : 'Light'}
-		</motion.button>
 	)
 }
 
@@ -154,25 +110,15 @@ function Stat({ value, label, c, delay }: { value: string | number; label: strin
 			{...fadeUp(delay)}
 			onHoverStart={() => setHov(true)}
 			onHoverEnd={() => setHov(false)}
+			className="flex-1 flex flex-col gap-1 p-5 rounded-2xl cursor-default transition-all duration-300"
 			style={{
-				flex: 1,
-				display: 'flex',
-				flexDirection: 'column',
-				gap: 5,
-				padding: '20px 18px',
-				borderRadius: 16,
 				background: hov ? `${c.accent}18` : 'rgba(255,255,255,0.03)',
 				border: `1px solid ${hov ? c.accentRing : c.divider}`,
-				transition: 'all 0.26s ease',
-				cursor: 'default',
 			}}
 		>
 			<div
+				className="text-4xl font-black tracking-tighter leading-none"
 				style={{
-					fontSize: '2.5rem',
-					fontWeight: 900,
-					letterSpacing: '-0.05em',
-					lineHeight: 1,
 					background: c.accentGrad,
 					WebkitBackgroundClip: 'text',
 					WebkitTextFillColor: 'transparent',
@@ -181,13 +127,8 @@ function Stat({ value, label, c, delay }: { value: string | number; label: strin
 				{value}
 			</div>
 			<div
-				style={{
-					fontSize: 10,
-					color: c.textMuted,
-					fontWeight: 800,
-					letterSpacing: '0.12em',
-					textTransform: 'uppercase',
-				}}
+				className="text-[10px] font-extrabold tracking-widest uppercase"
+				style={{ color: c.textMuted }}
 			>
 				{label}
 			</div>
@@ -195,7 +136,7 @@ function Stat({ value, label, c, delay }: { value: string | number; label: strin
 	)
 }
 
-// ─── EXPERIENCE STEPPER (compact vertical) ────────────────────
+// ─── EXPERIENCE STEPPER ────────────────────
 interface ExpItem {
 	period: string;
 	role: string;
@@ -204,80 +145,41 @@ interface ExpItem {
 }
 function ExpStepper({ items, c }: { items: ExpItem[]; c: ThemeColors }) {
 	return (
-		<div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+		<div className="flex flex-col gap-0">
 			{items.map((x, i) => {
 				const last = i === items.length - 1
 				return (
 					<motion.div
 						key={i}
 						{...fadeRight(0.52 + i * 0.08)}
-						style={{ display: 'flex', gap: 14, position: 'relative' }}
+						className="flex gap-4 relative"
 					>
-						{/* spine */}
-						<div
-							style={{
-								display: 'flex',
-								flexDirection: 'column',
-								alignItems: 'center',
-								width: 20,
-								flexShrink: 0,
-							}}
-						>
+						<div className="flex flex-col items-center w-5 flex-shrink-0">
 							<div
+								className="w-2 h-2 rounded-full mt-1 flex-shrink-0 transition-all duration-300"
 								style={{
-									width: 8,
-									height: 8,
-									borderRadius: '50%',
-									marginTop: 3,
-									flexShrink: 0,
 									background: x.current ? c.accent : c.textMuted,
 									boxShadow: x.current ? `0 0 0 3px ${c.accentGlow}` : 'none',
-									transition: 'all 0.3s',
 								}}
 							/>
 							{!last && (
 								<div
-									style={{
-										flex: 1,
-										width: 1,
-										background: c.stepLine,
-										marginTop: 4,
-										minHeight: 28,
-									}}
+									className="flex-1 w-px mt-1 min-h-[28px]"
+									style={{ background: c.stepLine }}
 								/>
 							)}
 						</div>
-						{/* content */}
-						<div style={{ paddingBottom: last ? 0 : 20 }}>
-							<div
-								style={{
-									display: 'flex',
-									alignItems: 'center',
-									gap: 8,
-									flexWrap: 'wrap',
-								}}
-							>
-								<span
-									style={{
-										fontSize: 13,
-										fontWeight: 700,
-										color: c.text,
-										letterSpacing: '-0.01em',
-									}}
-								>
+						<div className={last ? "" : "pb-5"}>
+							<div className="flex items-center gap-2 flex-wrap">
+								<span className="text-sm font-bold tracking-tight" style={{ color: c.text }}>
 									{x.role}
 								</span>
 								{x.current && (
 									<span
+										className="text-[9px] font-extrabold tracking-widest uppercase rounded-full px-2 py-0.5"
 										style={{
-											fontSize: 9,
-											fontWeight: 800,
-											letterSpacing: '0.1em',
-											textTransform: 'uppercase',
 											background: `${c.accent}18`,
 											color: c.accent,
-											borderRadius: 100,
-											padding: '2px 8px',
 											border: `1px solid ${c.accent}35`,
 										}}
 									>
@@ -285,7 +187,7 @@ function ExpStepper({ items, c }: { items: ExpItem[]; c: ThemeColors }) {
 									</span>
 								)}
 							</div>
-							<div style={{ fontSize: 11, color: c.textMuted, marginTop: 2 }}>
+							<div className="text-[11px] mt-1" style={{ color: c.textMuted }}>
 								{x.place} · {x.period}
 							</div>
 						</div>
@@ -315,31 +217,18 @@ function Pill({ icon, label, c, delay }: { icon: string; label: string; c: Theme
 			{...fadeUp(delay)}
 			onHoverStart={() => setHov(true)}
 			onHoverEnd={() => setHov(false)}
+			className="inline-flex items-center gap-2 rounded-full px-4 py-2 cursor-default select-none whitespace-nowrap transition-all duration-300"
 			style={{
-				display: 'inline-flex',
-				alignItems: 'center',
-				gap: 8,
 				background: hov ? `${c.accent}18` : c.pillBg,
 				border: `1px solid ${hov ? c.accentRing : c.pillBrd}`,
-				borderRadius: 100,
-				padding: '8px 16px',
 				boxShadow: hov ? `0 0 18px ${c.accentGlow}` : 'none',
 				transform: hov ? 'translateY(-2px)' : 'translateY(0)',
-				transition: 'all 0.26s cubic-bezier(.34,1.3,.64,1)',
-				cursor: 'default',
-				userSelect: 'none',
-				whiteSpace: 'nowrap',
 			}}
 		>
-			<span style={{ fontSize: 16 }}>{icon}</span>
+			<span className="text-base">{icon}</span>
 			<span
-				style={{
-					fontSize: 13,
-					fontWeight: 600,
-					color: hov ? c.accent : c.textSec,
-					transition: 'color 0.2s',
-					letterSpacing: '0.02em',
-				}}
+				className="text-sm font-semibold tracking-wide transition-colors duration-200"
+				style={{ color: hov ? c.accent : c.textSec }}
 			>
 				{label}
 			</span>
@@ -355,122 +244,44 @@ function Photo({ c }: { c: ThemeColors }) {
 			{...fadeLeft(0.08)}
 			onHoverStart={() => setHov(true)}
 			onHoverEnd={() => setHov(false)}
+			className="relative rounded-[20px] overflow-hidden w-full h-full min-h-[420px] cursor-default transition-all duration-500 ease-out shadow-2xl"
 			style={{
-				position: 'relative',
-				borderRadius: 20,
-				overflow: 'hidden',
-				width: '100%',
-				height: '100%',
-				minHeight: 520,
-				cursor: 'default',
 				border: `1px solid ${hov ? c.accentRing : 'rgba(255,255,255,0.08)'}`,
 				boxShadow: hov
-					? `0 32px 80px rgba(0,0,0,0.45),0 0 0 1px ${c.accent}28`
+					? `0 32px 80px rgba(0,0,0,0.45), 0 0 0 1px ${c.accent}28`
 					: '0 20px 60px rgba(0,0,0,0.30)',
-				transition: 'all 0.5s cubic-bezier(.34,1.1,.64,1)',
 			}}
 		>
-			{/* photo — swap src for your own */}
 			<img
 				src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=85'
 				alt='Alibek'
-				style={{
-					width: '100%',
-					height: '100%',
-					objectFit: 'cover',
-					display: 'block',
-					transform: hov ? 'scale(1.05)' : 'scale(1)',
-					transition: 'transform 0.6s cubic-bezier(.34,1.1,.64,1)',
-				}}
+				className="w-full h-full object-cover block transition-transform duration-700 ease-out"
+				style={{ transform: hov ? 'scale(1.05)' : 'scale(1)' }}
 			/>
-			{/* gradient overlay */}
-			<div
-				style={{
-					position: 'absolute',
-					inset: 0,
-					pointerEvents: 'none',
-					background:
-						'linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.10) 40%,transparent 100%)',
-				}}
-			/>
-			{/* available badge */}
-			<div
-				style={{
-					position: 'absolute',
-					top: 16,
-					left: 16,
-					display: 'flex',
-					alignItems: 'center',
-					gap: 6,
-					background: 'rgba(0,0,0,0.48)',
-					backdropFilter: 'blur(12px)',
-					border: '1px solid rgba(255,255,255,0.12)',
-					borderRadius: 100,
-					padding: '5px 13px',
-				}}
-			>
-				<span
-					style={{
-						width: 6,
-						height: 6,
-						background: '#4ADE80',
-						borderRadius: '50%',
-						display: 'inline-block',
-						boxShadow: '0 0 7px #4ADE80',
-						animation: 'pulse 2s ease-in-out infinite',
-					}}
-				/>
-				<span
-					style={{
-						color: '#4ADE80',
-						fontSize: 11,
-						fontWeight: 700,
-						letterSpacing: '0.06em',
-					}}
-				>
-					Available
-				</span>
+			<div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+			<div className="absolute top-4 left-4 flex items-center gap-1.5 bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-3 py-1">
+				<span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_8px_#4ADE80] animate-pulse" />
+				<span className="text-green-400 text-[11px] font-bold tracking-wider capitalize">Available</span>
 			</div>
-			{/* name tag */}
-			<div
-				style={{
-					position: 'absolute',
-					bottom: 20,
-					left: 20,
-					pointerEvents: 'none',
-				}}
-			>
-				<div
-					style={{
-						fontSize: 16,
-						fontWeight: 800,
-						color: '#fff',
-						letterSpacing: '-0.02em',
-						textShadow: '0 2px 12px rgba(0,0,0,0.5)',
-					}}
-				>
-					Alibek Allaberganov
-				</div>
-				<div
-					style={{
-						fontSize: 12,
-						color: 'rgba(255,255,255,0.55)',
-						marginTop: 3,
-						letterSpacing: '0.04em',
-					}}
-				>
-					Frontend Developer · Khorezm
-				</div>
+			<div className="absolute bottom-5 left-5 pointer-events-none">
+				<div className="text-lg font-black text-white tracking-tight drop-shadow-lg">Alibek Allaberganov</div>
+				<div className="text-xs text-white/60 mt-0.5 tracking-wide">Frontend Developer · Khorezm</div>
 			</div>
-			<style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.45}}`}</style>
 		</motion.div>
 	)
 }
 
 // ─── MAIN ─────────────────────────────────────────────────────
 export default function About() {
-	const [dark, setDark] = useState(true)
-	const c = dark ? DARK : LIGHT
+	const { resolvedTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+	
+	useEffect(() => setMounted(true), []);
+
+	if (!mounted) return null;
+
+	const isDark = resolvedTheme === 'dark';
+	const c = isDark ? DARK : LIGHT
 
 	const exp = [
 		{
@@ -494,55 +305,22 @@ export default function About() {
 	]
 
 	return (
-		<div
-			style={{
-				minHeight: '100vh',
-				background: c.bg,
-				fontFamily: "'DM Sans','Segoe UI',system-ui,sans-serif",
-				transition: 'background 0.7s ease',
-				position: 'relative',
-				overflowX: 'hidden',
-			}}
-		>
-			<Blobs c={c} dark={dark} />
-			<Toggle dark={dark} c={c} onToggle={() => setDark(v => !v)} />
+		<div id="about" className="min-h-screen relative overflow-x-hidden transition-colors duration-700" style={{ background: c.bg }}>
+			<Blobs c={c} isDark={isDark} />
 
-			<div
-				style={{
-					maxWidth: 1180,
-					margin: '0 auto',
-					padding: '80px 32px',
-					position: 'relative',
-					zIndex: 1,
-				}}
-			>
+			<div className="max-w-[1180px] mx-auto px-8 py-20 relative z-10">
+				
 				{/* Badge */}
-				<motion.div {...fadeUp(0)} style={{ marginBottom: 44 }}>
+				<motion.div {...fadeUp(0)} className="mb-12">
 					<div
+						className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[10px] font-extrabold tracking-[0.22em] uppercase"
 						style={{
-							display: 'inline-flex',
-							alignItems: 'center',
-							gap: 8,
 							background: `${c.accent}14`,
 							border: `1px solid ${c.accent}30`,
-							borderRadius: 100,
-							padding: '5px 18px',
-							fontSize: 10,
-							fontWeight: 800,
 							color: c.accent,
-							letterSpacing: '0.22em',
-							textTransform: 'uppercase',
 						}}
 					>
-						<span
-							style={{
-								width: 5,
-								height: 5,
-								background: c.accent,
-								borderRadius: '50%',
-								display: 'inline-block',
-							}}
-						/>
+						<span className="w-1.5 h-1.5 rounded-full" style={{ background: c.accent }} />
 						About Me
 					</div>
 				</motion.div>
@@ -550,53 +328,27 @@ export default function About() {
 				{/* ═══ OUTER GLASS SHELL ═══ */}
 				<motion.div
 					{...fadeUp(0.06)}
+					className="rounded-[28px] overflow-hidden backdrop-blur-[32px] saturate-[180%] shadow-2xl"
 					style={{
 						background: c.shell,
-						backdropFilter: 'blur(32px) saturate(180%)',
-						WebkitBackdropFilter: 'blur(32px) saturate(180%)',
 						border: `1px solid ${c.shellBrd}`,
-						borderRadius: 28,
-						overflow: 'hidden',
-						/* subtle top-edge shimmer */
-						boxShadow: dark
+						boxShadow: isDark
 							? '0 24px 80px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.06)'
-							: '0 12px 48px rgba(0,0,0,0.09), inset 0 1px 0 rgba(255,255,255,0.9)',
+							: '0 12px 48px rgba(0,0,0,0.09), inset 0 1px 0 rgba(255,255,255,1)',
 					}}
 				>
-					{/* ─── ROW 1 : Photo | Header+Bio+Stats ─── */}
-					<div
-						style={{
-							display: 'grid',
-							gridTemplateColumns: '2fr 3fr',
-							minHeight: 380,
-						}}
-					>
-						{/* COL A — full-height photo */}
-						<div style={{ padding: 20, borderRight: `1px solid ${c.divider}` }}>
+					<div className="grid grid-cols-1 md:grid-cols-5 flex-col md:flex-row min-h-[340px]">
+						<div className="md:col-span-2 p-4 border-b md:border-b-0 md:border-r" style={{ borderColor: c.divider }}>
 							<Photo c={c} />
 						</div>
 
-						{/* COL B — name · bio · stats */}
-						<div
-							style={{
-								padding: '44px 44px 36px',
-								display: 'flex',
-								flexDirection: 'column',
-								justifyContent: 'space-between',
-							}}
-						>
-							{/* top: heading + bio */}
+						<div className="md:col-span-3 p-8 md:p-10 flex flex-col justify-between">
 							<div>
 								<motion.h1
 									{...fadeRight(0.16)}
+									className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] mb-4"
 									style={{
-										fontSize: 'clamp(2.6rem,4.5vw,4rem)',
-										fontWeight: 900,
-										letterSpacing: '-0.045em',
-										lineHeight: 1.06,
-										margin: 0,
-										marginBottom: 10,
-										background: `linear-gradient(128deg,${c.text} 0%,${c.accent} 160%)`,
+										background: `linear-gradient(128deg, ${c.text} 0%, ${c.accent} 160%)`,
 										WebkitBackgroundClip: 'text',
 										WebkitTextFillColor: 'transparent',
 									}}
@@ -606,77 +358,36 @@ export default function About() {
 
 								<motion.p
 									{...fadeRight(0.22)}
-									style={{
-										fontSize: 13,
-										color: c.textMuted,
-										letterSpacing: '0.05em',
-										margin: 0,
-										marginBottom: 28,
-										fontWeight: 600,
-										textTransform: 'uppercase',
-									}}
+									className="text-xs font-bold tracking-widest uppercase mb-8"
+									style={{ color: c.textMuted }}
 								>
 									Frontend Developer · Khorezm, Uzbekistan
 								</motion.p>
 
 								<motion.p
 									{...fadeRight(0.28)}
-									style={{
-										fontSize: 16,
-										lineHeight: 1.88,
-										color: c.text,
-										margin: 0,
-										marginBottom: 12,
-									}}
+									className="text-base md:text-lg leading-relaxed mb-4"
+									style={{ color: c.text }}
 								>
-									I'm a{' '}
-									<strong style={{ color: c.accent, fontWeight: 700 }}>
-										passionate frontend developer
-									</strong>{' '}
-									who loves turning ideas into polished digital experiences —
-									clean code, thoughtful UX, and modern JS frameworks.
+									I'm a <strong style={{ color: c.accent, fontWeight: 700 }}>passionate frontend developer</strong> who loves turning ideas into polished digital experiences — clean code, thoughtful UX, and modern JS frameworks.
 								</motion.p>
 
 								<motion.p
 									{...fadeRight(0.34)}
-									style={{
-										fontSize: 15,
-										lineHeight: 1.82,
-										color: c.textSec,
-										margin: 0,
-									}}
+									className="text-sm md:text-base leading-relaxed"
+									style={{ color: c.textSec }}
 								>
-									Deeply into{' '}
-									<span style={{ color: c.accent, fontWeight: 600 }}>
-										AI-powered interfaces
-									</span>{' '}
-									and building products that feel natural and delightful.
+									Deeply into <span style={{ color: c.accent, fontWeight: 600 }}>AI-powered interfaces</span> and building products that feel natural and delightful.
 								</motion.p>
 							</div>
 
-							{/* bottom: stats row */}
-							<div>
+							<div className="mt-12">
 								<motion.div {...fadeUp(0.38)}>
-									<div
-										style={{
-											height: 1,
-											background: c.divider,
-											margin: '32px 0 24px',
-										}}
-									/>
-									<div
-										style={{
-											fontSize: 10,
-											color: c.textMuted,
-											fontWeight: 800,
-											letterSpacing: '0.18em',
-											textTransform: 'uppercase',
-											marginBottom: 16,
-										}}
-									>
+									<div className="h-px w-full mb-6" style={{ background: c.divider }} />
+									<div className="text-[10px] font-extrabold tracking-[0.18em] uppercase mb-4" style={{ color: c.textMuted }}>
 										At a Glance
 									</div>
-									<div style={{ display: 'flex', gap: 12 }}>
+									<div className="flex gap-4">
 										<Stat value='3+' label='Years Exp' c={c} delay={0.42} />
 										<Stat value='20+' label='Projects' c={c} delay={0.47} />
 										<Stat value='8+' label='Tech Stack' c={c} delay={0.52} />
@@ -686,105 +397,32 @@ export default function About() {
 						</div>
 					</div>
 
-					{/* ─── DIVIDER ─── */}
-					<div style={{ height: 1, background: c.divider }} />
+					<div className="h-px w-full" style={{ background: c.divider }} />
 
-					{/* ─── ROW 2 : Experience | Interests ─── */}
-					<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-						{/* LEFT — Experience stepper */}
-						<div
-							style={{
-								padding: '36px 44px',
-								borderRight: `1px solid ${c.divider}`,
-							}}
-						>
+					<div className="grid grid-cols-1 md:grid-cols-2">
+						<div className="p-8 md:p-12 border-b md:border-b-0 md:border-r" style={{ borderColor: c.divider }}>
 							<motion.div {...fadeUp(0.46)}>
-								<div
-									style={{
-										fontSize: 10,
-										color: c.textMuted,
-										fontWeight: 800,
-										letterSpacing: '0.18em',
-										textTransform: 'uppercase',
-										marginBottom: 24,
-									}}
-								>
+								<div className="text-[10px] font-extrabold tracking-[0.18em] uppercase mb-6" style={{ color: c.textMuted }}>
 									Experience
 								</div>
 								<ExpStepper items={exp} c={c} />
 							</motion.div>
 
-							{/* CTAs inside left column, below exp */}
-							<motion.div
-								{...fadeUp(0.72)}
-								style={{
-									display: 'flex',
-									gap: 12,
-									flexWrap: 'wrap',
-									marginTop: 32,
-								}}
-							>
+							<motion.div {...fadeUp(0.72)} className="flex flex-wrap gap-3 mt-10">
 								<a
 									href='#projects'
-									style={{
-										display: 'inline-flex',
-										alignItems: 'center',
-										gap: 8,
-										background: c.accentGrad,
-										color: '#fff',
-										fontWeight: 700,
-										fontSize: 14,
-										padding: '13px 26px',
-										borderRadius: 14,
-										textDecoration: 'none',
-										boxShadow: `0 8px 28px ${c.accentGlow}`,
-										transition: 'opacity 0.2s,transform 0.2s',
-									}}
-									onMouseEnter={e => {
-										e.currentTarget.style.opacity = '0.85'
-										e.currentTarget.style.transform = 'translateY(-2px)'
-									}}
-									onMouseLeave={e => {
-										e.currentTarget.style.opacity = '1'
-										e.currentTarget.style.transform = 'translateY(0)'
-									}}
+									className="inline-flex items-center gap-2 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all duration-300 hover:opacity-90 hover:-translate-y-1 shadow-lg shadow-indigo-500/20"
+									style={{ background: c.accentGrad, boxShadow: `0 8px 28px ${c.accentGlow}` }}
 								>
 									View Projects →
 								</a>
 								<a
 									href='/resume.pdf'
-									style={{
-										display: 'inline-flex',
-										alignItems: 'center',
-										gap: 8,
-										background: dark
-											? 'rgba(255,255,255,0.05)'
-											: 'rgba(255,255,255,0.85)',
-										border: `1px solid ${dark ? 'rgba(255,255,255,0.09)' : 'rgba(0,0,0,0.09)'}`,
-										backdropFilter: 'blur(14px)',
-										color: c.text,
-										fontWeight: 600,
-										fontSize: 14,
-										padding: '12px 22px',
-										borderRadius: 14,
-										textDecoration: 'none',
-										transition: 'all 0.22s ease',
-									}}
-									onMouseEnter={e => {
-										e.currentTarget.style.background = `${c.accent}18`
-										e.currentTarget.style.borderColor = `${c.accent}50`
-										e.currentTarget.style.color = c.accent
-										e.currentTarget.style.transform = 'translateY(-2px)'
-									}}
-									onMouseLeave={e => {
-										e.currentTarget.style.background = dark
-											? 'rgba(255,255,255,0.05)'
-											: 'rgba(255,255,255,0.85)'
-										e.currentTarget.style.borderColor = dark
-											? 'rgba(255,255,255,0.09)'
-											: 'rgba(0,0,0,0.09)'
-										e.currentTarget.style.color = c.text
-										e.currentTarget.style.transform = 'translateY(0)'
+									className="inline-flex items-center gap-2 font-bold text-sm px-6 py-3 rounded-xl border transition-all duration-300 hover:-translate-y-1"
+									style={{ 
+										background: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.85)',
+										borderColor: isDark ? 'rgba(255,255,255,0.09)' : 'rgba(0,0,0,0.09)',
+										color: c.text 
 									}}
 								>
 									⬇ Resume
@@ -792,30 +430,14 @@ export default function About() {
 							</motion.div>
 						</div>
 
-						{/* RIGHT — Interests pill grid */}
-						<div style={{ padding: '36px 44px' }}>
+						<div className="p-8 md:p-12">
 							<motion.div {...fadeUp(0.5)}>
-								<div
-									style={{
-										fontSize: 10,
-										color: c.textMuted,
-										fontWeight: 800,
-										letterSpacing: '0.18em',
-										textTransform: 'uppercase',
-										marginBottom: 24,
-									}}
-								>
+								<div className="text-[10px] font-extrabold tracking-[0.18em] uppercase mb-6" style={{ color: c.textMuted }}>
 									Interests
 								</div>
-								<div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+								<div className="flex flex-wrap gap-3">
 									{INTERESTS.map((it, i) => (
-										<Pill
-											key={it.label}
-											icon={it.icon}
-											label={it.label}
-											c={c}
-											delay={0.54 + i * 0.05}
-										/>
+										<Pill key={it.label} icon={it.icon} label={it.label} c={c} delay={0.54 + i * 0.05} />
 									))}
 								</div>
 							</motion.div>

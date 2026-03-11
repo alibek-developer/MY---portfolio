@@ -6,10 +6,11 @@ import { Download, FileText } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "next-themes";
 
 export default function Resume() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   return (
     <section
@@ -27,8 +28,8 @@ export default function Resume() {
 
         <AnimatedSection>
           <motion.div
-            className={`relative rounded-2xl p-8 sm:p-12 text-center overflow-hidden ${
-              theme === "dark"
+            className={`relative rounded-2xl p-7 sm:p-10 text-center overflow-hidden ${
+              isDark
                 ? "bg-white/[0.03] border border-white/[0.08]"
                 : "bg-white border border-slate-200 shadow-sm"
             }`}
@@ -41,7 +42,7 @@ export default function Resume() {
 
             <motion.div
               className={`inline-flex p-4 rounded-2xl mb-6 ${
-                theme === "dark"
+                isDark
                   ? "bg-primary/10"
                   : "bg-primary/5"
               }`}
