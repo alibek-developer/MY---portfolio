@@ -3197,7 +3197,6 @@ const LIGHT = {
     blob1: '#C7D2FE',
     blob2: '#DDD6FE'
 };
-// ─── BLOBS ────────────────────────────────────────────────────
 function Blobs({ c, dark }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: {
@@ -3223,7 +3222,7 @@ function Blobs({ c, dark }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 74,
+                lineNumber: 76,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3241,7 +3240,7 @@ function Blobs({ c, dark }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 88,
+                lineNumber: 90,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -3252,13 +3251,13 @@ function Blobs({ c, dark }) {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 102,
+                lineNumber: 104,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/About.tsx",
-        lineNumber: 65,
+        lineNumber: 67,
         columnNumber: 3
     }, this);
 }
@@ -3301,14 +3300,14 @@ function Toggle({ dark, c, onToggle }) {
                 children: dark ? '🌙' : '☀️'
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 141,
+                lineNumber: 143,
                 columnNumber: 4
             }, this),
             dark ? 'Dark' : 'Light'
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/About.tsx",
-        lineNumber: 114,
+        lineNumber: 116,
         columnNumber: 3
     }, this);
 }
@@ -3347,7 +3346,7 @@ function Stat({ value, label, c, delay }) {
                 children: value
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 168,
+                lineNumber: 170,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3361,19 +3360,18 @@ function Stat({ value, label, c, delay }) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 181,
+                lineNumber: 183,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/About.tsx",
-        lineNumber: 151,
+        lineNumber: 153,
         columnNumber: 3
     }, this);
 }
 _s(Stat, "9/uAcqUQPQAY6db9qMgZXXwbOpM=");
 _c2 = Stat;
-// ─── EXPERIENCE STEPPER (compact vertical) ────────────────────
 function ExpStepper({ items, c }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: {
@@ -3413,7 +3411,7 @@ function ExpStepper({ items, c }) {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/About.tsx",
-                                lineNumber: 218,
+                                lineNumber: 226,
                                 columnNumber: 8
                             }, this),
                             !last && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3426,13 +3424,13 @@ function ExpStepper({ items, c }) {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/About.tsx",
-                                lineNumber: 231,
+                                lineNumber: 239,
                                 columnNumber: 9
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/sections/About.tsx",
-                        lineNumber: 209,
+                        lineNumber: 217,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3458,7 +3456,7 @@ function ExpStepper({ items, c }) {
                                         children: x.role
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/About.tsx",
-                                        lineNumber: 252,
+                                        lineNumber: 260,
                                         columnNumber: 9
                                     }, this),
                                     x.current && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3476,13 +3474,13 @@ function ExpStepper({ items, c }) {
                                         children: "Now"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/About.tsx",
-                                        lineNumber: 263,
+                                        lineNumber: 271,
                                         columnNumber: 10
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/About.tsx",
-                                lineNumber: 244,
+                                lineNumber: 252,
                                 columnNumber: 8
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3498,25 +3496,25 @@ function ExpStepper({ items, c }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/About.tsx",
-                                lineNumber: 280,
+                                lineNumber: 288,
                                 columnNumber: 8
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/sections/About.tsx",
-                        lineNumber: 243,
+                        lineNumber: 251,
                         columnNumber: 7
                     }, this)
                 ]
             }, i, true, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 203,
+                lineNumber: 211,
                 columnNumber: 6
             }, this);
         })
     }, void 0, false, {
         fileName: "[project]/src/components/sections/About.tsx",
-        lineNumber: 199,
+        lineNumber: 207,
         columnNumber: 3
     }, this);
 }
@@ -3586,7 +3584,7 @@ function Pill({ icon, label, c, delay }) {
                 children: icon
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 326,
+                lineNumber: 334,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3600,13 +3598,13 @@ function Pill({ icon, label, c, delay }) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 327,
+                lineNumber: 335,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/About.tsx",
-        lineNumber: 306,
+        lineNumber: 314,
         columnNumber: 3
     }, this);
 }
@@ -3646,7 +3644,7 @@ function Photo({ c }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 366,
+                lineNumber: 374,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3658,7 +3656,7 @@ function Photo({ c }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 379,
+                lineNumber: 387,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3688,7 +3686,7 @@ function Photo({ c }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/About.tsx",
-                        lineNumber: 404,
+                        lineNumber: 412,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3701,13 +3699,13 @@ function Photo({ c }) {
                         children: "Available"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/About.tsx",
-                        lineNumber: 415,
+                        lineNumber: 423,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 389,
+                lineNumber: 397,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3729,7 +3727,7 @@ function Photo({ c }) {
                         children: "Alibek Allaberganov"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/About.tsx",
-                        lineNumber: 435,
+                        lineNumber: 443,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3742,26 +3740,26 @@ function Photo({ c }) {
                         children: "Frontend Developer · Khorezm"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/About.tsx",
-                        lineNumber: 446,
+                        lineNumber: 454,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 427,
+                lineNumber: 435,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
                 children: `@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.45}}`
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 457,
+                lineNumber: 465,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/About.tsx",
-        lineNumber: 346,
+        lineNumber: 354,
         columnNumber: 3
     }, this);
 }
@@ -3806,7 +3804,7 @@ function About() {
                 dark: dark
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 499,
+                lineNumber: 507,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Toggle, {
@@ -3815,7 +3813,7 @@ function About() {
                 onToggle: ()=>setDark((v)=>!v)
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 500,
+                lineNumber: 508,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3858,19 +3856,19 @@ function About() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/About.tsx",
-                                    lineNumber: 529,
+                                    lineNumber: 537,
                                     columnNumber: 7
                                 }, this),
                                 "About Me"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/sections/About.tsx",
-                            lineNumber: 513,
+                            lineNumber: 521,
                             columnNumber: 6
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/About.tsx",
-                        lineNumber: 512,
+                        lineNumber: 520,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3901,12 +3899,12 @@ function About() {
                                             c: c
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/About.tsx",
-                                            lineNumber: 568,
+                                            lineNumber: 576,
                                             columnNumber: 8
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/About.tsx",
-                                        lineNumber: 567,
+                                        lineNumber: 575,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3935,7 +3933,7 @@ function About() {
                                                         children: "Hi, I'm Alibek."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sections/About.tsx",
-                                                        lineNumber: 582,
+                                                        lineNumber: 590,
                                                         columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -3952,7 +3950,7 @@ function About() {
                                                         children: "Frontend Developer · Khorezm, Uzbekistan"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sections/About.tsx",
-                                                        lineNumber: 599,
+                                                        lineNumber: 607,
                                                         columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -3975,7 +3973,7 @@ function About() {
                                                                 children: "passionate frontend developer"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/sections/About.tsx",
-                                                                lineNumber: 625,
+                                                                lineNumber: 633,
                                                                 columnNumber: 10
                                                             }, this),
                                                             ' ',
@@ -3983,7 +3981,7 @@ function About() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/sections/About.tsx",
-                                                        lineNumber: 614,
+                                                        lineNumber: 622,
                                                         columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -4005,7 +4003,7 @@ function About() {
                                                                 children: "AI-powered interfaces"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/sections/About.tsx",
-                                                                lineNumber: 642,
+                                                                lineNumber: 650,
                                                                 columnNumber: 10
                                                             }, this),
                                                             ' ',
@@ -4013,13 +4011,13 @@ function About() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/sections/About.tsx",
-                                                        lineNumber: 632,
+                                                        lineNumber: 640,
                                                         columnNumber: 9
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/sections/About.tsx",
-                                                lineNumber: 581,
+                                                lineNumber: 589,
                                                 columnNumber: 8
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4034,7 +4032,7 @@ function About() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/sections/About.tsx",
-                                                            lineNumber: 652,
+                                                            lineNumber: 660,
                                                             columnNumber: 10
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4049,7 +4047,7 @@ function About() {
                                                             children: "At a Glance"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/sections/About.tsx",
-                                                            lineNumber: 659,
+                                                            lineNumber: 667,
                                                             columnNumber: 10
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4065,7 +4063,7 @@ function About() {
                                                                     delay: 0.42
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/sections/About.tsx",
-                                                                    lineNumber: 672,
+                                                                    lineNumber: 680,
                                                                     columnNumber: 11
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Stat, {
@@ -4075,7 +4073,7 @@ function About() {
                                                                     delay: 0.47
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/sections/About.tsx",
-                                                                    lineNumber: 673,
+                                                                    lineNumber: 681,
                                                                     columnNumber: 11
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Stat, {
@@ -4085,36 +4083,36 @@ function About() {
                                                                     delay: 0.52
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/sections/About.tsx",
-                                                                    lineNumber: 674,
+                                                                    lineNumber: 682,
                                                                     columnNumber: 11
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/sections/About.tsx",
-                                                            lineNumber: 671,
+                                                            lineNumber: 679,
                                                             columnNumber: 10
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/sections/About.tsx",
-                                                    lineNumber: 651,
+                                                    lineNumber: 659,
                                                     columnNumber: 9
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/sections/About.tsx",
-                                                lineNumber: 650,
+                                                lineNumber: 658,
                                                 columnNumber: 8
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/sections/About.tsx",
-                                        lineNumber: 572,
+                                        lineNumber: 580,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/About.tsx",
-                                lineNumber: 559,
+                                lineNumber: 567,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4124,7 +4122,7 @@ function About() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/About.tsx",
-                                lineNumber: 682,
+                                lineNumber: 690,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4154,7 +4152,7 @@ function About() {
                                                         children: "Experience"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sections/About.tsx",
-                                                        lineNumber: 694,
+                                                        lineNumber: 702,
                                                         columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ExpStepper, {
@@ -4162,13 +4160,13 @@ function About() {
                                                         c: c
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sections/About.tsx",
-                                                        lineNumber: 706,
+                                                        lineNumber: 714,
                                                         columnNumber: 9
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/sections/About.tsx",
-                                                lineNumber: 693,
+                                                lineNumber: 701,
                                                 columnNumber: 8
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4207,7 +4205,7 @@ function About() {
                                                         children: "View Projects →"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sections/About.tsx",
-                                                        lineNumber: 719,
+                                                        lineNumber: 727,
                                                         columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -4242,19 +4240,19 @@ function About() {
                                                         children: "⬇ Resume"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sections/About.tsx",
-                                                        lineNumber: 746,
+                                                        lineNumber: 754,
                                                         columnNumber: 9
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/sections/About.tsx",
-                                                lineNumber: 710,
+                                                lineNumber: 718,
                                                 columnNumber: 8
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/sections/About.tsx",
-                                        lineNumber: 687,
+                                        lineNumber: 695,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4276,7 +4274,7 @@ function About() {
                                                     children: "Interests"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/sections/About.tsx",
-                                                    lineNumber: 790,
+                                                    lineNumber: 798,
                                                     columnNumber: 9
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4292,47 +4290,47 @@ function About() {
                                                             delay: 0.54 + i * 0.05
                                                         }, it.label, false, {
                                                             fileName: "[project]/src/components/sections/About.tsx",
-                                                            lineNumber: 804,
+                                                            lineNumber: 812,
                                                             columnNumber: 11
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/sections/About.tsx",
-                                                    lineNumber: 802,
+                                                    lineNumber: 810,
                                                     columnNumber: 9
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sections/About.tsx",
-                                            lineNumber: 789,
+                                            lineNumber: 797,
                                             columnNumber: 8
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/About.tsx",
-                                        lineNumber: 788,
+                                        lineNumber: 796,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/About.tsx",
-                                lineNumber: 685,
+                                lineNumber: 693,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/sections/About.tsx",
-                        lineNumber: 543,
+                        lineNumber: 551,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/sections/About.tsx",
-                lineNumber: 502,
+                lineNumber: 510,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/About.tsx",
-        lineNumber: 489,
+        lineNumber: 497,
         columnNumber: 3
     }, this);
 }

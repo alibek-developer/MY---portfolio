@@ -60,7 +60,9 @@ const LIGHT = {
 }
 
 // ─── BLOBS ────────────────────────────────────────────────────
-function Blobs({ c, dark }) {
+type ThemeColors = typeof DARK;
+
+function Blobs({ c, dark }: { c: ThemeColors; dark: boolean }) {	
 	return (
 		<div
 			style={{
@@ -109,7 +111,7 @@ function Blobs({ c, dark }) {
 }
 
 // ─── TOGGLE ───────────────────────────────────────────────────
-function Toggle({ dark, c, onToggle }) {
+function Toggle({ dark, c, onToggle }: { dark: boolean; c: ThemeColors; onToggle: () => void }) {
 	return (
 		<motion.button
 			onClick={onToggle}
@@ -145,7 +147,7 @@ function Toggle({ dark, c, onToggle }) {
 }
 
 // ─── STAT CELL ────────────────────────────────────────────────
-function Stat({ value, label, c, delay }) {
+function Stat({ value, label, c, delay }: { value: string | number; label: string; c: ThemeColors; delay?: number }) {
 	const [hov, setHov] = useState(false)
 	return (
 		<motion.div
@@ -194,7 +196,13 @@ function Stat({ value, label, c, delay }) {
 }
 
 // ─── EXPERIENCE STEPPER (compact vertical) ────────────────────
-function ExpStepper({ items, c }) {
+interface ExpItem {
+	period: string;
+	role: string;
+	place: string;
+	current: boolean;
+}
+function ExpStepper({ items, c }: { items: ExpItem[]; c: ThemeColors }) {
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
 			{items.map((x, i) => {
@@ -300,7 +308,7 @@ const INTERESTS = [
 	{ icon: '🧩', label: 'Puzzles' },
 ]
 
-function Pill({ icon, label, c, delay }) {
+function Pill({ icon, label, c, delay }: { icon: string; label: string; c: ThemeColors; delay?: number }) {
 	const [hov, setHov] = useState(false)
 	return (
 		<motion.div
@@ -340,7 +348,7 @@ function Pill({ icon, label, c, delay }) {
 }
 
 // ─── PHOTO ────────────────────────────────────────────────────
-function Photo({ c }) {
+function Photo({ c }: { c: ThemeColors }) {
 	const [hov, setHov] = useState(false)
 	return (
 		<motion.div
