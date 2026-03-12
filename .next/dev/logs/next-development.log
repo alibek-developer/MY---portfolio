@@ -1,0 +1,188 @@
+[00:00:06.465] Server  LOG     
+[00:00:06.466] Server  LOG       We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+[00:00:06.468] Server  LOG       The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:06.469] Server  LOG       	- include was updated to add '.next/dev/types/**/*.ts'
+[00:00:06.470] Server  LOG     
+[00:00:06.471] Server  LOG       The following mandatory changes were made to your tsconfig.json:
+
+[00:00:06.472] Server  LOG       	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+[00:00:06.473] Server  LOG     
+[00:00:07.535] Server  LOG     ✓ Ready in 5.3s
+[00:00:11.888] Server  LOG     ○ Compiling / ...
+[00:09:53.105] Server  LOG     ✓ Compiled in 1538ms
+[00:12:39.027] Server  LOG     ✓ Compiled in 206ms
+[00:15:09.955] Server  LOG     ✓ Compiled in 89ms
+[00:18:27.799] Server  LOG     ✓ Compiled in 581ms
+[00:24:12.274] Server  LOG     ✓ Compiled in 266ms
+[00:27:57.658] Server  LOG     ✓ Compiled in 235ms
+[00:29:29.116] Server  LOG     ✓ Compiled in 94ms
+[00:29:30.161] Browser ERROR   ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx:655:21
+Parsing ecmascript source code failed
+  653 |    {PROJECTS.map(p => (
+  654 |      <motion.div key={p.id} variants={card} whileHover={{ scale: 1.02 }}>
+> 655 |        <ProjectCard ... />
+      |                     ^^^
+  656 |      </motion.div>
+  657 |     ))}
+  658 |   </motion.div>
+
+Expected '</', got '...'
+
+Import traces:
+  Client Component Browser:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+[00:30:01.356] Server  ERROR   ⨯ ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx:655:21
+Parsing ecmascript source code failed
+  653 |    {PROJECTS.map(p => (
+  654 |      <motion.div key={p.id} variants={card} whileHover={{ scale: 1.02 }}>
+> 655 |        <ProjectCard ... />
+      |                     ^^^
+  656 |      </motion.div>
+  657 |     ))}
+  658 |   </motion.div>
+
+Expected '</', got '...'
+
+Import traces:
+  Client Component Browser:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+
+[00:30:01.592] Browser ERROR   ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx:655:21
+Parsing ecmascript source code failed
+  653 |    {PROJECTS.map(p => (
+  654 |      <motion.div key={p.id} variants={card} whileHover={{ scale: 1.02 }}>
+> 655 |        <ProjectCard ... />
+      |                     ^^^
+  656 |      </motion.div>
+  657 |     ))}
+  658 |   </motion.div>
+
+Expected '</', got '...'
+
+Import traces:
+  Client Component Browser:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+[00:30:04.453] Server  LOG     ○ Compiling /_error ...
+[00:30:06.166] Browser ERROR   ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx:655:21
+Parsing ecmascript source code failed
+  653 |    {PROJECTS.map(p => (
+  654 |      <motion.div key={p.id} variants={card} whileHover={{ scale: 1.02 }}>
+> 655 |        <ProjectCard ... />
+      |                     ^^^
+  656 |      </motion.div>
+  657 |     ))}
+  658 |   </motion.div>
+
+Expected '</', got '...'
+
+Import traces:
+  Client Component Browser:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+[00:30:09.147] Browser ERROR   uncaughtError: Error: ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx:655:21
+Parsing ecmascript source code failed
+  653 |    {PROJECTS.map(p => (
+  654 |      <motion.div key={p.id} variants={card} whileHover={{ scale: 1.02 }}>
+> 655 |        <ProjectCard ... />
+      |                     ^^^
+  656 |      </motion.div>
+  657 |     ))}
+  658 |   </motion.div>
+
+Expected '</', got '...'
+
+Import traces:
+  Client Component Browser:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+
+[00:30:10.888] Server  LOG     ✓ Compiled in 78ms
+[00:30:10.891] Browser ERROR   ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx:655:21
+Parsing ecmascript source code failed
+  653 |    {PROJECTS.map(p => (
+  654 |      <motion.div key={p.id} variants={card} whileHover={{ scale: 1.02 }}>
+> 655 |        <ProjectCard ... />
+      |                     ^^^
+  656 |      </motion.div>
+  657 |     ))}
+  658 |   </motion.div>
+
+Expected '</', got '...'
+
+Import traces:
+  Client Component Browser:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+[00:30:10.891] Browser ERROR   ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx:655:21
+Parsing ecmascript source code failed
+  653 |    {PROJECTS.map(p => (
+  654 |      <motion.div key={p.id} variants={card} whileHover={{ scale: 1.02 }}>
+> 655 |        <ProjectCard ... />
+      |                     ^^^
+  656 |      </motion.div>
+  657 |     ))}
+  658 |   </motion.div>
+
+Expected '</', got '...'
+
+Import traces:
+  Client Component Browser:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component Browser]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./projects/Desktop/myportfolio/src/components/sections/Projects.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Client Component SSR]
+    ./projects/Desktop/myportfolio/src/app/page.tsx [Server Component]
+[00:33:18.048] Server  LOG     ✓ Compiled in 244ms
+[00:35:46.088] Server  LOG     ✓ Compiled in 565ms
+[00:37:55.629] Server  LOG     ✓ Compiled in 1180ms
+[00:39:34.907] Server  LOG     ✓ Compiled in 84ms
+[00:40:18.168] Server  LOG     ✓ Compiled in 70ms
+[00:41:19.200] Server  LOG     ✓ Compiled in 155ms
+[00:41:34.935] Server  LOG     ✓ Compiled in 130ms
+[00:42:25.756] Server  LOG     ✓ Compiled in 99ms
+[01:00:09.162] Server  LOG     ✓ Compiled in 273ms
