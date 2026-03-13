@@ -1,12 +1,15 @@
-const CHUNK_PUBLIC_PATH = "server/app/page.js";
-const runtime = require("../chunks/ssr/[turbopack]_runtime.js");
-runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_7c458f._.js");
-runtime.loadChunk("server/chunks/ssr/[root of the server]__550d4a._.js");
-runtime.loadChunk("server/chunks/ssr/[root of the server]__3a0ba9._.js");
-runtime.loadChunk("server/chunks/ssr/[root of the server]__404369._.css");
-runtime.loadChunk("server/chunks/ssr/node_modules_ce97a5._.js");
-runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_client_components_forbidden-error_b4e556.js");
-runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_client_components_unauthorized-error_d758e6.js");
-runtime.loadChunk("server/chunks/ssr/_4f9a2d._.js");
-runtime.getOrInstantiateRuntimeModule("[project]/.next-internal/server/app/page/actions.js [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH);
-module.exports = runtime.getOrInstantiateRuntimeModule("[project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/page { MODULE_0 => \"[project]/src/app/layout.tsx [app-rsc] (ecmascript, Next.js server component)\", MODULE_1 => \"[project]/node_modules/next/dist/client/components/not-found-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_2 => \"[project]/node_modules/next/dist/client/components/forbidden-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_3 => \"[project]/node_modules/next/dist/client/components/unauthorized-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_4 => \"[project]/src/app/page.tsx [app-rsc] (ecmascript, Next.js server component)\" } [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH).exports;
+var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/app/page.js")
+R.c("server/chunks/ssr/projects_Desktop_myportfolio_8dcf128e._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__d3492e89._.js")
+R.c("server/chunks/ssr/projects_Desktop_myportfolio_bf4db6d7._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__30f6815d._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__829c762a._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__3537a652._.js")
+R.c("server/chunks/ssr/c6bda_next_dist_client_components_builtin_global-error_33863763.js")
+R.c("server/chunks/ssr/[root-of-the-server]__9ab69bef._.js")
+R.c("server/chunks/ssr/c6bda_next_dist_client_components_9b00400b._.js")
+R.c("server/chunks/ssr/c6bda_next_dist_client_components_builtin_forbidden_5ba2388b.js")
+R.c("server/chunks/ssr/c6bda_next_dist_client_components_builtin_unauthorized_04f4cb7f.js")
+R.c("server/chunks/ssr/projects_Desktop_myportfolio__next-internal_server_app_page_actions_3928bb54.js")
+R.m(58043)
+module.exports=R.m(58043).exports

@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useTheme } from 'next-themes'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, type JSX } from 'react'
 
 // ─── TOKENS ───────────────────────────────────────────────────
 const DARK = {
