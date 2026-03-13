@@ -45,9 +45,7 @@ self.__SERVER_FILES_MANIFEST={
       "path": "/_next/image",
       "loader": "default",
       "loaderFile": "",
-      "domains": [
-        "via.placeholder.com"
-      ],
+      "domains": [],
       "disableStaticImages": false,
       "minimumCacheTTL": 14400,
       "formats": [
@@ -65,7 +63,14 @@ self.__SERVER_FILES_MANIFEST={
           "search": ""
         }
       ],
-      "remotePatterns": [],
+      "remotePatterns": [
+        {
+          "protocol": "https",
+          "hostname": "via.placeholder.com",
+          "port": "",
+          "pathname": "/**"
+        }
+      ],
       "qualities": [
         75
       ],

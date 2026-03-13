@@ -3424,7 +3424,7 @@ function Photo({ c }) {
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projects$2f$Desktop$2f$myportfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                src: "./public/alibek.jpg",
+                src: "/alibek.jpg",
                 alt: "Alibek",
                 style: {
                     width: '100%',
@@ -5348,8 +5348,8 @@ const PROJECTS = [
         accentLight: '#4F46E5',
         glowDark: 'rgba(129,140,248,0.35)',
         glowLight: 'rgba(79,70,229,0.15)',
-        liveUrl: 'https://your-ai-english-demo.vercel.app',
-        codeUrl: 'https://github.com/alibek-developer/ai-english'
+        liveUrl: 'https://github.com/alibek-developer/',
+        codeUrl: 'https://github.com/alibek-developer/'
     },
     {
         id: 'restaurant',
@@ -5367,13 +5367,13 @@ const PROJECTS = [
         accentLight: '#7C3AED',
         glowDark: 'rgba(167,139,250,0.32)',
         glowLight: 'rgba(124,58,237,0.14)',
-        liveUrl: 'https://your-restaurant-demo.vercel.app',
-        codeUrl: 'https://github.com/alibek-developer/restaurant-management'
+        liveUrl: 'https://github.com/alibek-developer/',
+        codeUrl: 'https://github.com/alibek-developer/'
     },
     {
         id: 'ecommerce',
         large: false,
-        title: 'E-Commerce Admin Dashboard',
+        title: 'Restourant mobile app',
         desc: 'A sleek admin panel for managing e-commerce products, orders, and analytics with clean architecture and responsive design across all device sizes.',
         tech: [
             'React',
@@ -5386,8 +5386,8 @@ const PROJECTS = [
         accentLight: '#0891B2',
         glowDark: 'rgba(103,232,249,0.28)',
         glowLight: 'rgba(8,145,178,0.14)',
-        liveUrl: 'https://your-ecommerce-demo.vercel.app',
-        codeUrl: 'https://github.com/alibek-developer/ecommerce-dashboard'
+        liveUrl: 'https://github.com/alibek-developer/',
+        codeUrl: 'https://github.com/alibek-developer/'
     }
 ];
 // ─── SVG ICONS ────────────────────────────────────────────────
