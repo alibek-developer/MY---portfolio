@@ -3424,7 +3424,7 @@ function Photo({ c }) {
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projects$2f$Desktop$2f$myportfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=85",
+                src: "./public/alibek.jpg",
                 alt: "Alibek",
                 style: {
                     width: '100%',

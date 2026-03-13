@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Alibekaaa/projects/Desktop/myportfolio/src/components/ThemeProvider.tsx"],"sourcesContent":["\"use client\";\n\nimport * as React from \"react\";\nimport { ThemeProvider as NextThemesProvider } from \"next-themes\";\n\nexport function ThemeProvider({ \n  children, \n  ...props \n}: React.ComponentProps<typeof NextThemesProvider>) {\n  return (\n    <NextThemesProvider \n      attribute=\"class\" \n      defaultTheme=\"dark\" \n      enableSystem\n      disableTransitionOnChange\n      {...props}\n    >\n      {children}\n    </NextThemesProvider>\n  );\n}\n"],"names":[],"mappings":";;;;;AAGA;AAHA;;;AAKO,SAAS,cAAc,EAC5B,QAAQ,EACR,GAAG,OAC6C;IAChD,qBACE,oRAAC,uMAAkB;QACjB,WAAU;QACV,cAAa;QACb,YAAY;QACZ,yBAAyB;QACxB,GAAG,KAAK;kBAER;;;;;;AAGP"}}]
+}

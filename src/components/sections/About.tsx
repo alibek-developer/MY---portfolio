@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type JSX } from 'react'
 
 const spring = { type: 'spring', stiffness: 52, damping: 15 }
 const fadeUp    = (d = 0) => ({ initial: { opacity: 0, y: 36 },  animate: { opacity: 1, y: 0 },  transition: { ...spring, delay: d } })
@@ -170,7 +170,7 @@ function Photo({ c }: { c: C }) {
   return (
     <motion.div {...fadeLeft(0.08)} onHoverStart={() => setHov(true)} onHoverEnd={() => setHov(false)}
       style={{ position: 'relative', borderRadius: 14, overflow: 'hidden', width: '100%', minHeight: 440, cursor: 'default', border: `1px solid ${hov ? c.accentRing : 'rgba(255,255,255,0.07)'}`, boxShadow: hov ? `0 28px 72px rgba(0,0,0,0.40)` : 'none', transition: 'box-shadow 0.5s, border-color 0.5s' }}>
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=85" alt="Alibek"
+      <img src="./public/alibek.jpg" alt="Alibek"
         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transform: hov ? 'scale(1.05)' : 'scale(1)', transition: 'transform 0.7s ease', minHeight: 440 }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.18) 50%, transparent 100%)', pointerEvents: 'none' }} />
       {/* Badges */}
