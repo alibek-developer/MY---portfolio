@@ -616,7 +616,7 @@ export default function Navbar() {
                 <GitHubIcon />
               </motion.a>
               <motion.a
-                href="/resume.pdf" download className="resume-btn"
+                href="./public/resume/resume.pdf" download className="resume-btn"
                 whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 transition={{ delay: 0.35 }}
